@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular + Spring Boot CRUD Full Stack App';
+  title = 'Master Degree Project ISSR ';
+  title2 = '( K8S and Cloud Application Auto-scaling using AI Model) ';
+
 }

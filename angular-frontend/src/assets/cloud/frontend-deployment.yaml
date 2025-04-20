@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-issr-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-issr-app
+  template:
+    metadata:
+      labels:
+        app: frontend-issr-app
+    spec:
+      containers:
+      - name: frontend-issr-app
+        image: frontend-issr-app:latest
+        env:
+        - name: API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: my-config
+              key: API_URL

@@ -1,0 +1,34 @@
+spring:
+ application:
+    name: issr-user-services
+ cloud:
+   kubernetes:
+     config:
+       name: ${spring.application.name}
+       enabled: true
+       namespace: default
+       sources:
+         - name: ${spring.application.name}
+         - name: sharedconfig
+     reload:
+            enabled: true
+            mode: event
+            period: 1000
+            strategy: refresh
+server:
+  servlet:
+    context-path: /issr
+management:
+ endpoint:
+   restart:
+     enabled: true
+   health:
+     enabled: true
+   loggers:
+     enabled: true
+   info:
+     enabled: true
+ endpoints:
+   web:
+     exposure:
+       include: info, refresh, keepalive, health

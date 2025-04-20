@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { CreateEmployeeComponent } from './create-employee/create-employee.component';
-import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeListComponent } from './Employee-list/Employee-list.component';
+import { CreateEmployeeComponent } from './create-Employee/create-Employee.component';
+import { UpdateEmployeeComponent } from './update-Employee/update-Employee.component';
+import { EmployeeDetailsComponent } from './Employee-details/Employee-details.component';
 
 const routes: Routes = [
-  {path: 'employees', component: EmployeeListComponent},
-  {path: 'create-employee', component: CreateEmployeeComponent},
-  {path: '', redirectTo: 'employees', pathMatch: 'full'},
-  {path: 'update-employee/:id', component: UpdateEmployeeComponent},
-  {path: 'employee-details/:id', component: EmployeeDetailsComponent}
+  {path: 'Employee', component: EmployeeListComponent},
+  {path: 'create-Employee', component: CreateEmployeeComponent},
+  {path: '', redirectTo: 'Employee', pathMatch: 'full'},
+  {path: 'update-Employee/:id', component: UpdateEmployeeComponent},
+  {path: 'Employee-details/:id', component: EmployeeDetailsComponent}
 ];
 
 @NgModule({

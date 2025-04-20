@@ -12,14 +12,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of employees" >
-            <td> {{ employee.firstName }} </td>
-            <td> {{ employee.lastName }} </td>
-            <td> {{ employee.emailId }} </td>
+        <tr *ngFor = "let Employee of Employee" >
+            <td> {{ Employee.firstName }} </td>
+            <td> {{ Employee.lastName }} </td>
+            <td> {{ Employee.emailId }} </td>
             <td>
-                <button (click) = "updateEmployee(employee.id)" class = "btn btn-primary"> Update</button>
-                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "employeeDetails(employee.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+                <button (click) = "updateEmployee(Employee.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteEmployee(Employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "EmployeeDetails(Employee.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
             </td>
         </tr>
     </tbody>
