@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:latest
+FROM openjdk:21-jdk
 ARG JAR_FILE=target/app.jar
 RUN mkdir -p /otp/spring-cloud
 RUN chmod 600  /otp/spring-cloud
