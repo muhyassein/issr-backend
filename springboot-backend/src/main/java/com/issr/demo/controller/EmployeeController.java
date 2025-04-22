@@ -27,7 +27,12 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
+	@GetMapping("/check")
+	public String checkHealth(){
+		return "Connected Successfully";
+	}
+
 	// get all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
@@ -74,6 +79,4 @@ public class EmployeeController {
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
 	}
-	
-	
 }
