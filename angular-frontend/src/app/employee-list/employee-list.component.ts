@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../Employee';
-import { EmployeeService } from '../Employee.service'
+import { EmployeeService } from '../studentsModel/employee.service'; // Adjust the path if necessary
+
 import { Router } from '@angular/router';
+import { Student } from '../studentsModel/student'; // Adjust the path if necessary
+import { Checkload } from '../studentsModel/check';
+
 @Component({
   selector: 'app-Employee-list',
   templateUrl: './Employee-list.component.html',
@@ -9,7 +12,9 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
 
-  Employee: Employee[];
+  Employee: Student[];
+  checkload: Checkload; // Replace 'any' with the correct type if known
+
 
   constructor(private EmployeeService: EmployeeService,
     private router: Router) { }
@@ -23,6 +28,7 @@ export class EmployeeListComponent implements OnInit {
       this.Employee = data;
     });
   }
+
 
   EmployeeDetails(id: number){
     this.router.navigate(['Employee-details', id]);

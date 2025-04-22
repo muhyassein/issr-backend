@@ -1,7 +1,17 @@
 #!/bin/sh
 
-echo "Injecting environment variables into env.js..."
-envsubst < /usr/share/nginx/html/assets/env.js > /usr/share/nginx/html/assets/env.js
+# Set default if env var not passed
+: "${API_BASE_URL:=http://localhost:8888/api}"
 
-exec "$@"
-echo "Starting Nginx..."
+# Inject environment variables into a config file for AngularJS to use
+cat <<EOF > /usr/share/nginx/html/config.json
+{
+  "API_BASE_URL": "${API_BASE_URL}"
+}
+EOF
+
+# Optional: You can echo the config for debug/logging
+echo "Generated config.json with API_BASE_URL=${API_BASE_URL}"
+
+# Start nginx in the foreground
+exec nginx -g "daemon off;"

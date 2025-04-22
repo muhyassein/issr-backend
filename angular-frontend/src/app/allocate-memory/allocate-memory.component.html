@@ -1,0 +1,24 @@
+
+<h2> Check Memory Loading </h2>
+<form (ngSubmit)="onSubmit()">
+
+        <div>
+
+        <label> Number of CPU   ....... </label>
+        <input class="form-text text-muted" type="text"  id="cpu"       [(ngModel)]="cpu"  name="cpu">
+        </div>
+        <div>
+
+        <label> Number of Request .</label>
+        <input class="form-text text-muted" type="text"  id="requests"  [(ngModel)]="requests"  name="requests">
+        </div>
+        <div>
+                <button class="btn btn-success" type="submit">Check</button>
+        </div>
+        <div>
+
+        <label> Result </label>
+        <input class="form-text" type="text"  disabled id="response" [(ngModel)]="response"  name="response">
+        </div>
+</form>
+

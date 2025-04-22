@@ -7,7 +7,9 @@ import { EmployeeListComponent } from './Employee-list/Employee-list.component';
 import { CreateEmployeeComponent } from './create-Employee/create-Employee.component';
 import { FormsModule} from '@angular/forms';
 import { UpdateEmployeeComponent } from './update-Employee/update-Employee.component';
-import { EmployeeDetailsComponent } from './Employee-details/Employee-details.component'
+import { EmployeeDetailsComponent } from './Employee-details/Employee-details.component';
+import { CheckLoadComponent } from './check-load/check-load.component';
+import { AllocateMemoryComponent } from './allocate-memory/allocate-memory.component'
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { EmployeeDetailsComponent } from './Employee-details/Employee-details.co
     EmployeeListComponent,
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    CheckLoadComponent,
+    AllocateMemoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-issr-app
+  name: issr-frontend-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-issr-app
+      app: issr-frontend-service
   template:
     metadata:
       labels:
-        app: frontend-issr-app
+        app: issr-frontend-service
     spec:
       containers:
-      - name: frontend-issr-app
-        image: frontend-issr-app:latest
-        env:
-        - name: API_URL
-          valueFrom:
-            configMapKeyRef:
-              name: my-config
-              key: API_URL
+      - name: issr-frontend-service
+        image: issr-frontend-service:latest
+        envFrom:
+        - configMapRef:
+            name: issr-frontend-service
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: issr-frontend-service
+spec:
+  selector:
+    app: issr-frontend-service
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: ClusterIP

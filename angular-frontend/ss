@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app: sit-02
+  name: all-ingress
+  namespace: sn
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.org/proxy-connect-timeout: "360"
+    nginx.org/proxy-read-timeout: "360"
+    nginx.org/proxy-send-timeout: "360"
+    nginx.org/proxy-body-size: 30m
+    nginx.org/client-max-body-size: 30m
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: qa2.apps.kube.devfasah.sa
+    http:
+      paths:
+      - backend:
+          service:
+            name: tir-service
+            port:
+              name: http
+        path: /tir-service
+        pathType: ImplementationSpecific     
+status: 
+  loadBalancer: {} 
+ 

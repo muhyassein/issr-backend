@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: frontend-config
+  name: issr-frontend-service
 data:
   env.js: |
     window['env'] = {
-      API_URL: "http://backend-service.default.svc.cluster.local"
+      API_URL:   "http://backend-service.default.svc.cluster.local",
+      CHECK_URL: "http://issr-workload-services.default.svc.cluster.local"
     };

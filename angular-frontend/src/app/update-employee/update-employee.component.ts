@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../Employee.service';
-import { Employee } from '../Employee';
+import { Student } from '../studentsModel/student';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EmployeeService } from '../studentsModel/employee.service'; // Adjust the path if necessary
 
 @Component({
   selector: 'app-update-Employee',
@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateEmployeeComponent implements OnInit {
 
   id: number;
-  Employee: Employee = new Employee();
+  Employee: Student = new Student();
   constructor(private EmployeeService: EmployeeService,
     private route: ActivatedRoute,
     private router: Router) { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../Employee';
-import { EmployeeService } from '../Employee.service';
+import { Student } from '../studentsModel/student';
+import { EmployeeService } from '../studentsModel/employee.service'; // Adjust the path if necessary
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateEmployeeComponent implements OnInit {
 
-  Employee: Employee = new Employee();
+  Employee: Student = new Student();
   constructor(private EmployeeService: EmployeeService,
     private router: Router) { }
 
